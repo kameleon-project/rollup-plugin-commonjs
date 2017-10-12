@@ -14,7 +14,7 @@ const exportsPattern = /^(?:module\.)?exports(?:\.([a-zA-Z_$][a-zA-Z_$0-9]*))?$/
 
 const firstpassGlobal = /\b(?:require|module|exports|global)\b/;
 const firstpassNoGlobal = /\b(?:require|module|exports)\b/;
-const importExportDeclaration = /^(?:Import|Export(?:Named|Default))Declaration/;
+// const importExportDeclaration = /^(?:Import|Export(?:Named|Default))Declaration/;
 
 function deconflict ( scope, globals, identifier ) {
 	let i = 1;
@@ -46,10 +46,11 @@ export default function transformCommonjs ( code, id, isEntry, ignoreGlobal, ign
 	const ast = tryParse( code, id );
 
 	// if there are top-level import/export declarations, this is ES not CommonJS
+	/*
 	for ( const node of ast.body ) {
 		if ( importExportDeclaration.test( node.type ) ) return null;
 	}
-
+	*/
 	const magicString = new MagicString( code );
 
 	const required = {};
