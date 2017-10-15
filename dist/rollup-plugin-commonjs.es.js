@@ -2,7 +2,7 @@ import { statSync } from 'fs';
 import { basename, dirname, extname, resolve, sep } from 'path';
 import { sync } from 'resolve';
 import { attachScopes, createFilter, makeLegalIdentifier } from 'rollup-pluginutils';
-import acorn from 'acorn';
+const acorn = require('acorn');
 import { walk } from 'estree-walker';
 import MagicString from 'magic-string';
 
