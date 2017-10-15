@@ -167,7 +167,7 @@ function getName ( id ) {
 		var segments = path.dirname( id ).split( path.sep );
 
 		if (segments[segments.length - 1] === '')
-			{ return root; }
+			{ return 'root'; }
 		else
 			{ return rollupPluginutils.makeLegalIdentifier( segments[segments.length - 1] ); }
 	}

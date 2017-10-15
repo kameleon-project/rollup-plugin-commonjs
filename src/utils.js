@@ -9,7 +9,7 @@ export function getName ( id ) {
 		const segments = dirname( id ).split( sep );
 
 		if (segments[segments.length - 1] === '')
-			return root;
+			return 'root';
 		else
 			return makeLegalIdentifier( segments[segments.length - 1] );
 	}

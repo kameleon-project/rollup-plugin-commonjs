@@ -2,7 +2,7 @@ import { statSync } from 'fs';
 import { basename, dirname, extname, resolve, sep } from 'path';
 import { sync } from 'resolve';
 import { attachScopes, createFilter, makeLegalIdentifier } from 'rollup-pluginutils';
-const acorn = require('acorn');
+import acorn from 'acorn';
 import { walk } from 'estree-walker';
 import MagicString from 'magic-string';
 
@@ -163,7 +163,7 @@ function getName ( id ) {
 		var segments = dirname( id ).split( sep );
 
 		if (segments[segments.length - 1] === '')
-			{ return root; }
+			{ return 'root'; }
 		else
 			{ return makeLegalIdentifier( segments[segments.length - 1] ); }
 	}
