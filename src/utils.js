@@ -7,7 +7,10 @@ export function getName ( id ) {
 		return name;
 	} else {
 		const segments = dirname( id ).split( sep );
-		return makeLegalIdentifier( segments[segments.length - 1] );
+
+		if (segments[segments.length - 1] === '')
+			return root;
+		else
+			return makeLegalIdentifier( segments[segments.length - 1] );
 	}
 }
-
